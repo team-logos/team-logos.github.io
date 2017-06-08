@@ -25,6 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
       h1 {
+        color: #757575;
         font-weight: 400;
         font-size: 48px;
         margin: 20px 0;
@@ -52,10 +53,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         border-radius: 2px;
       }
       .element {
-        border: 1px solid #606060;
+        border: 1px solid #757575;
         padding: 8px;
+        width: 24px;
+      }
+      .element-cell {
+        width: 48px;
+      }
+      .left-align {
+        text-align: left;
       }
     </style>
+
+    <firebase-app auth-domain="https://team-logos.firebaseio.com/"
+        database-url="https://team-logos.firebaseio.com/"
+        api-key="AIzaSyDTP-eiQezleFsV2WddFBAhF_WEzx_8v_g"></firebase-app>
+
+    <div class="card">
+      <h1>{{TitleValue}}</h1>
+      <h2>{{SubtitleValue}}</h2>
+      <hr>
+      <h3>{{DescriptionValue}}</h3>
+    </div>
+
+    <div class="card">
+      
+        <table style="width:100%">
+          <tr>
+            <td class="element-cell"><div class="element">Md</div></td>
+            <td class="left-align"><div>Material Design</div></td> 
+          </tr>
+        </table>
+
+    </div>
+
+    <div class="card">
+      <iron-input id="input1" bind-value="{{TitleValue}}"><input></iron-input>
+      <iron-input id="input2"><input value="{{SubtitleValue::input}}"></iron-input>
+      <iron-input id="input3"><input value="{{DescriptionValue::input}}"></iron-input>
+    </div>
 
     <div class="card">
       <h1>Md</h1>
@@ -64,15 +100,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h3>Material design elements</h3>
     </div>
 
-    <div class="card">
-      <p class="element">Md</p>
-    </div>
-
   </template>
 
   <script>
     class MyView1 extends Polymer.Element {
       static get is() { return 'my-view1'; }
+      
     }
 
     window.customElements.define(MyView1.is, MyView1);
