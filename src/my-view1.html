@@ -51,11 +51,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       .card {
         border-radius: 2px;
+        padding: 2px 16px;
       }
       .element {
         border: 1px solid #757575;
         padding: 8px;
         width: 24px;
+        text-align: center;
       }
       .element-cell {
         width: 48px;
@@ -63,11 +65,46 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .left-align {
         text-align: left;
       }
+      .card-brown {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(221, 201, 230);
+        border-color: rgb(221, 201, 230);
+      }
+      .card-green {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(129, 199, 132);
+        border-color: rgb(129, 199, 132);
+      }
+      .card-blue {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(100, 181, 246);
+        border-color: rgb(100, 181, 246);
+      }
+      .card-orange {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(255, 183, 77);
+        border-color: rgb(255, 183, 77);
+      }
+      .card-turqouise {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(167, 255, 235);
+        border-color: rgb(167, 255, 235);
+      }
+      .card-silver {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(207, 216, 220);
+        border-color: rgb(207, 216, 220);
+      }
+      .card-red {
+        color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(255, 171, 145);
+        border-color: rgb(255, 171, 145);
+      }
     </style>
 
-    <firebase-app auth-domain="https://team-logos.firebaseio.com/"
-        database-url="https://team-logos.firebaseio.com/"
-        api-key="AIzaSyDTP-eiQezleFsV2WddFBAhF_WEzx_8v_g"></firebase-app>
+    <!--<firebase-document
+    location="https://team-logos.firebaseio.com/logos"
+    data="{{logos}}"></firebase-document>-->
 
     <div class="card">
       <h1>{{TitleValue}}</h1>
@@ -80,25 +117,89 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
         <table style="width:100%">
           <tr>
-            <td class="element-cell"><div class="element">Md</div></td>
-            <td class="left-align"><div>Material Design</div></td> 
+            <td class="element-cell"><div class="element">{{TitleValue}}</div></td>
+            <td class="left-align"><div>{{SubtitleValue}}</div></td> 
           </tr>
         </table>
 
     </div>
 
     <div class="card">
-      <iron-input id="input1" bind-value="{{TitleValue}}"><input></iron-input>
-      <iron-input id="input2"><input value="{{SubtitleValue::input}}"></iron-input>
-      <iron-input id="input3"><input value="{{DescriptionValue::input}}"></iron-input>
+      <iron-input id="input1" bind-value="{{TitleValue}}"><input placeholder="Title"></iron-input>
+      <iron-input id="input2"><input value="{{SubtitleValue::input}}" placeholder="Subtitle"></iron-input>
+      <iron-input id="input3"><input value="{{DescriptionValue::input}}" placeholder="Description"></iron-input>
+      <!--<p>Colour picker</p>-->
     </div>
 
     <div class="card">
+      <h1>Da</h1>
+      <h2>Data & Analytics</h2>
+      <hr>
+      <h3>Data Science and Business Intelligence</h3>
+    </div>
+    
+    <div class="card card">
+      <h1>Sb</h1>
+      <h2 style="width:130px">Search & Browse</h2>
+      <hr>
+      <h3>Storefront Shop Experience</h3>
+    </div>
+
+    <div class="card card-brown">
+      <h1>Ma</h1>
+      <h2>Mobile Apps</h2>
+      <hr>
+      <h3>Native iOS & Android</h3>
+    </div>
+
+    <div class="card card-silver">
+      <h1>Mp</h1>
+      <h2>Product & Marketplace</h2>
+      <hr>
+      <h3>Product Data across all vendors</h3>
+    </div>
+
+    <div class="card card-orange">
+      <h1>Oc</h1>
+      <h2>Orders & Checkout</h2>
+      <hr>
+      <h3>Cart, Checkout, Payments & Order Processing</h3>
+    </div>
+
+    <div class="card card-turqouise">
+      <h1>Lo</h1>
+      <h2>Logistics</h2>
+      <hr>
+      <h3>Order fulfillment and shipping</h3>
+    </div>
+
+    <div class="card card-red">
+      <h1>Ac</h1>
+      <h2>Accounts & Communications</h2>
+      <hr>
+      <h3>Customer profiles and services</h3>
+    </div>
+
+    <div class="card">
+      <h1>Rs</h1>
+      <h2>Retail Stream</h2>
+      <hr>
+      <h3>Category representatives</h3>
+    </div>
+
+    <div class="card card-orange">
+      <h1>Gs</h1>
+      <h2>Geek Squad</h2>
+      <hr>
+      <h3>Available 24 / 7 / 365</h3>
+    </div>
+
+    <!--<div class="card">
       <h1>Md</h1>
       <h2>Paper Elements</h2>
       <hr>
       <h3>Material design elements</h3>
-    </div>
+    </div>-->
 
   </template>
 
